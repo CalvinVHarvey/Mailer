@@ -3,6 +3,7 @@ Mail plugin
 
 
 #Introduction
+
 Developed this plugin originally for my Minecraft server Frontier which is a an earthmap geopolitical server 
 
 This plugin lets you create mail boxes and send physical mail to other players via the form of a Book and quil
