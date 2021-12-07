@@ -66,11 +66,7 @@ public class Main extends JavaPlugin
 			{
 				MailBox cur = p.getPostOffice().get(i);
 				cur.setPlugin(this);
-				
-				if (this != null)
-				{
-					cur.setChest(cur.getChestFromCords());
-				}
+				cur.setChest(cur.getChestFromCords());
 				int[] cords = BreakListener.findSign(cur.getX(), cur.getY(), cur.getZ(), BreakListener.getSigns(), cur.getChest().getWorld());
 				cur.setSign(cords[0], cords[1], cords[2]);
 			}

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import me.NorthAlaska.mailPlugin.*;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
@@ -100,7 +101,10 @@ public class MailBox implements Serializable
 	
 	public void sendMail(ItemStack book)
 	{
-		chest.getInventory().addItem(book);
+		//chest = this.getChestFromCords();
+			chest = this.getChestFromCords();
+			chest.getBlockInventory().addItem(book);
+			Bukkit.getConsoleSender().sendMessage("Error loading chunk");
 	}
 	
 	
