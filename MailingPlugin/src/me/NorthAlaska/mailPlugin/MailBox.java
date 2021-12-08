@@ -102,9 +102,8 @@ public class MailBox implements Serializable
 	public void sendMail(ItemStack book)
 	{
 		//chest = this.getChestFromCords();
-			chest = this.getChestFromCords();
-			chest.getBlockInventory().addItem(book);
-			Bukkit.getConsoleSender().sendMessage("Error loading chunk");
+		chest = this.getChestFromCords();
+		chest.getBlockInventory().addItem(book);
 	}
 	
 	
