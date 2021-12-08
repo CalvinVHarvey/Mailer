@@ -49,11 +49,12 @@ public class BreakListener implements Listener
 		{
 			Sign theSign = (Sign)b.getState();
 			String signText = "&7&l" +e.getPlayer().getName();
+			String ownerOfBox = theSign.getLine(1).substring(4);
 			
 			if (theSign.getLine(0).equals(Utils.chat("[&7&lMail Box&r]")))
 			{
-				int index = plugin.getP().findMailIndex(e.getPlayer().getName());
-				if (index != -1 && signText.equals(theSign.getLine(1)))
+				int index = plugin.getP().findMailIndex(ownerOfBox);
+				if (index != -1)
 				{
 					plugin.getP().removeMailbox(index);
 					Bukkit.getConsoleSender().sendMessage(Utils.chat(plugin.getD().toString()));
