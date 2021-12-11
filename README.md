@@ -20,3 +20,7 @@ As of right now the only command you can use is the /sendmail command which will
 
 and if that player is offline if they have one it will send it to their mail box. 
 
+#Permissions
+
+The permission 'mailer.send' is used for giving players the ability to send mail to over players.
+
