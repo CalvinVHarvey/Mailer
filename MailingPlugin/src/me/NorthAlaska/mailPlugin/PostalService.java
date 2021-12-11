@@ -11,7 +11,7 @@ public class PostalService
 	
 	public PostalService ()
 	{
-		//this.postOffice = new ArrayList<MailBox>();
+		this.postOffice = new ArrayList<MailBox>();
 	}
 	
 	/* Finds a MailBox given a player name throughout the arraylist

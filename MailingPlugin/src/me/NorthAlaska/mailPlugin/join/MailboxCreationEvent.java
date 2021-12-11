@@ -61,6 +61,8 @@ public class MailboxCreationEvent implements Listener
 			MailBox mail = new MailBox(chest, owner, l, cords[0], cords[1], cords[2], world, plugin);
 			
 			plugin.getP().addMailbox(mail);
+			
+			plugin.getD().saveData("Mailboxes.data", plugin.getP().getPostOffice());
 		}
 		else if(text.toLowerCase().equals("[mailbox]") && plugin.getP().findMailIndex(p.getName()) != -1)
 		{

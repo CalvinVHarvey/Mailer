@@ -64,17 +64,21 @@ public class BreakListener implements Listener
 		}
 		else if (b.getType() == Material.CHEST)
 		{
-			int index = plugin.getP().findMailIndex(e.getPlayer().getName());
 			int[] cords = findSign(b.getX(), b.getY(), b.getZ(), signs, w);
-			Location temp5 = new Location(w, cords[0], cords[1], cords[2]);
-			Sign s = (Sign) temp5.getBlock().getState();
-			if (s.getLine(0).equals(Utils.chat("[&7&lMail Box&r]")))
+			
+			if (cords != null)
 			{
-				if (index != -1)
+				Location temp5 = new Location(w, cords[0], cords[1], cords[2]);
+				Sign s = (Sign) temp5.getBlock().getState();
+				int index = plugin.getP().findMailIndex(s.getLine(1).substring(4));
+				if (s.getLine(0).equals(Utils.chat("[&7&lMail Box&r]")))
 				{
-					plugin.getP().removeMailbox(index);
+					if (index != -1)
+					{
+						plugin.getP().removeMailbox(index);
+					}
+					e.getPlayer().sendMessage(Utils.chat("&cMailbox Deleted"));
 				}
-				e.getPlayer().sendMessage(Utils.chat("&cMailbox Deleted"));
 			}
 		}
 	}
@@ -125,6 +129,10 @@ public class BreakListener implements Listener
 				cord[0] = sX;
 				cord[1] = sY;
 				cord[2] = sZ + 1;
+			}
+			else
+			{
+				return null;
 			}
 		}
 		

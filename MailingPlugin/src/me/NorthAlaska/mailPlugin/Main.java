@@ -51,7 +51,7 @@ public class Main extends JavaPlugin
 		{
 			Bukkit.getConsoleSender().sendMessage(Utils.chat("&aSuccessfuly Loaded MailBoxes"));
 			Bukkit.getConsoleSender().sendMessage(Utils.chat(temp.toString()));
-			if (p.getPostOffice() != null || temp.getArray() != null && temp.getArray().size() > 0)
+			if (p.getPostOffice() != null || temp.getArray() != null)
 			{
 				p.setPostOffice(temp.getArray());
 			}
@@ -68,7 +68,10 @@ public class Main extends JavaPlugin
 				cur.setPlugin(this);
 				cur.setChest(cur.getChestFromCords());
 				int[] cords = BreakListener.findSign(cur.getX(), cur.getY(), cur.getZ(), BreakListener.getSigns(), cur.getChest().getWorld());
-				cur.setSign(cords[0], cords[1], cords[2]);
+				if (cords != null)
+				{
+					cur.setSign(cords[0], cords[1], cords[2]);
+				}
 			}
 		}
 		

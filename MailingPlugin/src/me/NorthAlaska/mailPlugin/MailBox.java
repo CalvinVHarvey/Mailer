@@ -8,6 +8,7 @@ import me.NorthAlaska.mailPlugin.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.inventory.ItemStack;
 
@@ -101,9 +102,8 @@ public class MailBox implements Serializable
 	
 	public void sendMail(ItemStack book)
 	{
-		//chest = this.getChestFromCords();
 		chest = this.getChestFromCords();
-		chest.getBlockInventory().addItem(book);
+		chest.getBlockInventory().addItem(book);   
 	}
 	
 	
