@@ -105,6 +105,21 @@ public class MailBox implements Serializable
 		chest = this.getChestFromCords();
 		chest.getBlockInventory().addItem(book);   
 	}
+	public boolean hasMail()
+	{
+		chest = this.getChestFromCords();
+		
+		ItemStack[] contents = chest.getBlockInventory().getStorageContents();
+		
+		for (int i = 0; i < contents.length; i++)
+		{
+			if (contents[i] != null && contents[i].getType() == Material.WRITTEN_BOOK)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	
 	

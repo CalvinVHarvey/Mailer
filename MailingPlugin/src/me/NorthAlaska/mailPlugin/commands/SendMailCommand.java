@@ -54,6 +54,8 @@ public class SendMailCommand implements CommandExecutor
 		
 		Player t = Bukkit.getPlayerExact(args[0]);
 		ItemStack currentItem = p.getItemInHand();
+		int cost = plugin.getConfig().getInt("mail_cost");
+		String costItem = plugin.getConfig().getString("cost_material");
 		
 		if (t != null && t instanceof Player && t != sender)
 		{
@@ -63,7 +65,7 @@ public class SendMailCommand implements CommandExecutor
 				{
 					PlayerInventory inv = t.getInventory();
 					PlayerInventory senderInv = p.getInventory();
-					if (senderInv.contains(cost()))
+					if (senderInv.contains(Material.matchMaterial(plugin.getConfig().getString("cost_material"))))
 					{
 						senderInv.removeItem(cost());
 						inv.addItem(currentItem);
@@ -73,7 +75,7 @@ public class SendMailCommand implements CommandExecutor
 					}
 					else
 					{
-						p.sendMessage(Utils.chat("&cYou do not sufficient funds"));
+						p.sendMessage(Utils.chat("&cYou do not sufficient funds, cost is " +cost +" " +costItem));
 					}
 				}
 				return true;

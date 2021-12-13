@@ -24,14 +24,14 @@ public class JoinListener implements Listener
 	{
 		Player p = e.getPlayer();
 		
-		if (!p.hasPlayedBefore())
+		MailBox m = plugin.getP().findMailBox(p.getName());
+		
+		if (m != null)
 		{
-			Bukkit.broadcastMessage(Utils.chat(plugin.getConfig().getString("firstjoin_message").replace("<player>", p.getName())));
-			p.sendMessage("Hello this is a test :)");
-		}
-		else
-		{
-			Bukkit.broadcastMessage(Utils.chat(plugin.getConfig().getString("join_message").replace("<player>", p.getName())));
+			if (m.hasMail())
+			{
+				p.sendMessage(Utils.chat("&aYou Have Mail!"));
+			}
 		}
 	}
 	

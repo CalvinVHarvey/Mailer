@@ -57,7 +57,7 @@ public class BreakListener implements Listener
 				if (index != -1)
 				{
 					plugin.getP().removeMailbox(index);
-					Bukkit.getConsoleSender().sendMessage(Utils.chat(plugin.getD().toString()));
+					//Bukkit.getConsoleSender().sendMessage(Utils.chat(plugin.getD().toString()));
 					e.getPlayer().sendMessage(Utils.chat("&cMailbox Deleted"));
 				}
 			}

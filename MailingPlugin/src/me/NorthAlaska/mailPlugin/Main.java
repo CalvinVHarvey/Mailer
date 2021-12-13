@@ -1,5 +1,6 @@
 package me.NorthAlaska.mailPlugin;
 
+import me.NorthAlaska.mailPlugin.commands.SendAllCommand;
 import me.NorthAlaska.mailPlugin.commands.SendMailCommand;
 import me.NorthAlaska.mailPlugin.join.BreakListener;
 import me.NorthAlaska.mailPlugin.join.JoinListener;
@@ -44,13 +45,14 @@ public class Main extends JavaPlugin
 		new JoinListener(this);
 		new MailboxCreationEvent(this);
 		new BreakListener(this);
+		new SendAllCommand(this);
 		//new PostalService();
 		new Utils();
 		Data temp = Data.loadData("Mailboxes.data");
 		if (Data.loadData("Mailboxes.data") != null)
 		{
 			Bukkit.getConsoleSender().sendMessage(Utils.chat("&aSuccessfuly Loaded MailBoxes"));
-			Bukkit.getConsoleSender().sendMessage(Utils.chat(temp.toString()));
+			//Bukkit.getConsoleSender().sendMessage(Utils.chat(temp.toString()));
 			if (p.getPostOffice() != null || temp.getArray() != null)
 			{
 				p.setPostOffice(temp.getArray());
