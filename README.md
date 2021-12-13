@@ -16,11 +16,12 @@ To create a Mail Box all you have to do is put [mailbox] on the first line of a 
 
 #Commands
 
-As of right now the only command you can use is the /sendmail command which will send the book and quil you are holding to another players inventory
+'/send' or '/sendmail' you specify a players name and if they are online they will get sent the written book you are holding if you are holding one to their inventory else it will send the signed book to their Mail Box if they have one.
 
-and if that player is offline if they have one it will send it to their mail box. 
+'/sendall' sends the signed book that the player is holding to all Mail Boxes usually given to administators or moderators. 
 
 #Permissions
 
 The permission 'mailer.send' is used for giving players the ability to send mail to over players.
+The permissions 'mailer.sendall' is used for allowing players to use the /sendAll command
 
