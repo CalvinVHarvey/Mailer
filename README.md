@@ -22,6 +22,6 @@ To create a Mail Box all you have to do is put [mailbox] on the first line of a 
 
 #Permissions
 
-The permission 'mailer.send' is used for giving players the ability to send mail to over players.
+The permission 'mailer.send' is used for giving players the ability to send mail to other players.
 The permissions 'mailer.sendall' is used for allowing players to use the /sendAll command
 
